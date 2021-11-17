@@ -4,7 +4,7 @@
 	<title>Smashing HTML5!</title>
 	<meta charset="utf-8" />
 	
-	<link rel="stylesheet" href="css/main.css" type="text/css" />
+	<link rel="stylesheet" href="/css/main.css" type="text/css" />
 
 	<!--[if IE]>
 	  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
