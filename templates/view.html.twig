@@ -1,0 +1,50 @@
+{#
+# Copyright 2018 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#}
+
+{% extends "base.html.twig" %}
+
+{% block content %}
+
+<h3>Book</h3>
+<form method="post" action="/comments/{{comment.id}}/delete" id="deleteForm">
+  <div class="btn-group">
+    <a href="/comments/{{comment.id}}/edit" class="btn btn-primary btn-sm">
+      <i class="glyphicon glyphicon-edit"></i>
+      Edit comment
+    </a>
+    <button id="submit" type="submit" class="btn btn-danger btn-sm">
+      <i class="glyphicon glyphicon-trash"></i>
+      Delete comment
+    </button>
+  </div>
+</form>
+
+<div class="media">
+  <div class="media-left">
+    <img class="comment-image" height=100 weight=100
+         src="{{ comment.image_url ?: 'https://pbs.twimg.com/profile_images/910122244520730624/esBg9-1l.jpg' }}">
+  </div>
+  <div class="media-body">
+    <h4 class="comment-title">
+      {{comment.title}}
+      <small>{{comment.published_date}}</small>
+    </h4>
+    <h5 class="comment-author">By {{comment.author|default('Unknown', True)}}</h5>
+    <p class="comment-description">{{comment.description}}</p>
+  </div>
+</div>
+
+{% endblock %}
